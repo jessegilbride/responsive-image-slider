@@ -3,30 +3,67 @@
 $breakpoint-small: 'max-width: 959px';
 $breakpoint-medium: 'min-width: 960px';
 $breakpoint-large: 'min-width: 1200px';
+// $total-num-slides: counter(slide-count);
+// $number-of-slides: 1/12;
+// $slider-width: percentage($total-num-slides);
 
+:root {counter-reset: slide-count;}
 
-// default styles
-// ----------------------------------------
 .page-container {
-	display: flex;
-	height: 100vh;
+	width: 80%;
+	margin: 5rem auto auto;
+	// &:after {
+	// 	margin: 1rem;
+	// 	content: "There are " $total-num-slides " slides.";
+	// }
 }
 
 .slider-container {
+	display: flex;
+	justify-content: flex-start;
+	position: relative;
 	width: 100%;
-	min-height: 300px;
-	max-width: 960px;
-	margin: 6rem auto auto;
-	outline: dotted;
+	height: 300px;
+	overflow: hidden;
+	.nav-button {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 20%;
+		max-width: 6rem;
+		outline: none;
+		border: none;
+		background: rgba(64,64,64,0.3);
+		color: #FFF;
+		span {
+			top: 45%;
+			font-size: 4rem;
+		}
+		&.nav-left {
+			left: 0;
+		}
+		&.nav-right {
+			right: 0;
+		}
+	}
+}
+
+.slider {
+	display: flex;
+	width: 1200%;
+	flex-shrink: 0;
+  transition: all 0.5s;
 }
 
 .slide {
+	flex-basis: calc(100% * 1/12);
+	flex-shrink: 0;
 	position: relative;
-	// display: inline-block;
-	display: none;
-	width: 100%;
-	height: 100%;
 	list-style: none;
+	counter-increment: slide-count;
 }
 
 .slide-media {
@@ -45,21 +82,20 @@ $breakpoint-large: 'min-width: 1200px';
 	color: #FFF;
 }
 
-.page-footer {
-	position: absolute;
-	display: flex;
-	align-self: flex-end;
-	width: 100%;
-	height: 5rem;
-	background-color: #363636;
-	p {
-		color: #FFF;
-		margin: auto;
-		padding: auto 2rem;
-		a:link {color: #2fc2fa;}
-		a:visited {color: #2fc2fa;}
-	}
-}
+// .page-footer {
+// 	display: flex;
+// 	align-self: flex-end;
+// 	width: 100%;
+// 	height: 5rem;
+// 	background-color: #363636;
+// 	p {
+// 		color: #FFF;
+// 		margin: auto;
+// 		padding: auto 2rem;
+// 		a:link {color: #2fc2fa;}
+// 		a:visited {color: #2fc2fa;}
+// 	}
+// }
 
 // small screen styles
 // ----------------------------------------
