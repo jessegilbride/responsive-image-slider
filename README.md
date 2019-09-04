@@ -17,6 +17,7 @@ The slider functions by rearranging the order of the slides in the DOM. When the
 * Add/fix swipe capability and pagination (the dots under the slider).
 * Fix overlapping backgrounds for navigation buttons and caption area. One idea is to make the button's arrow background a circle.
 * The number of slides factors into the width of ```.slider```, and the flex-basis of each ```.slide```, which currently is hardcoded into the CSS but could be automated by parsing the DOM and adjusting to however many slides (direct children) are within the slider, thereby requiring less maintenance.
+* So that embedded videos are easier to interact with, it might be best to move the navigation buttons off of the slider so they're just outside.
 
 ## Known Issues
 * There's a bug where, after clicking the left nav button, clicking the right nav button causes the slider to move forward by 2 slides instead of 1.
