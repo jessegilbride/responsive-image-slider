@@ -18,9 +18,10 @@ The slider functions by rearranging the order of the slides in the DOM. When the
 * Fix overlapping backgrounds for navigation buttons and caption area. One idea is to make the button's arrow background a circle.
 * The number of slides factors into the width of ```.slider```, and the flex-basis of each ```.slide```, which currently is hardcoded into the CSS but could be automated by parsing the DOM and adjusting to however many slides (direct children) are within the slider, thereby requiring less maintenance.
 
-## Known Issues (also: see repo issues area)
+## Known Issues
 * There's a bug where, after clicking the left nav button, clicking the right nav button causes the slider to move forward by 2 slides instead of 1.
 * Images appear to have whitespace under them because of their dimension proportions. If an image doesn't have enough height, at small slider/container widths the whitespace shows.
+* Pagination not working.
 
 ## Things Worth Mentioning
 Pagination and swipe capability are not currently functioning.
