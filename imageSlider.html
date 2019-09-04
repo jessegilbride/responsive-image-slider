@@ -1,109 +1,125 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Responsive Image Slider | Jesse Gilbride</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
+  <head>
+      <meta charset="utf-8">
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Responsive Image Slider | Jesse Gilbride</title>
+      <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
 
-    	<div class="page-container">
-	    	<div class="slider-container">
-    			<ul class="slider">
-    				<li class="slide">
-    					<div class="slide-media">
-    						<img src="images/atlanta-rainy.jpg">
-    					</div>
-    					<div class="slide-caption"></div>
-    				</li>
+  	<div class="page-container">
+    	<div class="slider-container">
+  			<ul class="slider">
 
-    				<li class="slide">
-    					<div class="slide-media">
-    						<img src="images/atlanta.jpg">
-    					</div>
-    					<div class="slide-caption"></div>
-    				</li>
+  				<li class="slide" data-slide-id="1">
+  					<div class="slide-media">
+  						<img src="images/atlanta-rainy.jpg">
+  					</div>
+  					<div class="slide-caption">Slide 1</div>
+  				</li>
 
-    				<li class="slide">
-    					<div class="slide-media">
-    						<img src="images/boston.jpg">
-    					</div>
-    					<div class="slide-caption"></div>
-    				</li>
+  				<li class="slide" data-slide-id="2">
+  					<div class="slide-media">
+  						<img src="images/atlanta.jpg">
+  					</div>
+  					<div class="slide-caption">Slide 2</div>
+  				</li>
 
-    				<li class="slide">
-    					<div class="slide-media">
-    						<img src="images/chicago.jpg">
-    					</div>
-    					<div class="slide-caption"></div>
-    				</li>
+  				<li class="slide" data-slide-id="3">
+  					<div class="slide-media">
+  						<img src="images/boston.jpg">
+  					</div>
+  					<div class="slide-caption">Slide 3</div>
+  				</li>
 
-    				<li class="slide">
-    					<div class="slide-media">
-    						<img src="images/dallas-dusk.jpg">
-    					</div>
-    					<div class="slide-caption"></div>
-    				</li>
+  				<li class="slide" data-slide-id="4">
+  					<div class="slide-media">
+  						<img src="images/chicago.jpg">
+  					</div>
+  					<div class="slide-caption">Slide 4</div>
+  				</li>
 
-    				<li class="slide">
-    					<div class="slide-media">
-    						<img src="images/dallas.jpg">
-    					</div>
-    					<div class="slide-caption"></div>
-    				</li>
+  				<li class="slide" data-slide-id="5">
+  					<div class="slide-media">
+  						<img src="images/dallas-dusk.jpg">
+  					</div>
+  					<div class="slide-caption">Slide 5</div>
+  				</li>
 
-    				<li class="slide">
-    					<div class="slide-media">
-    						<img src="images/denver.jpg">
-    					</div>
-    					<div class="slide-caption"></div>
-    				</li>
+  				<li class="slide" data-slide-id="6">
+  					<div class="slide-media">
+  						<img src="images/dallas.jpg">
+  					</div>
+  					<div class="slide-caption">Slide 6</div>
+  				</li>
 
-    				<li class="slide">
-    					<div class="slide-media">
-    						<img src="images/detroit.jpg">
-    					</div>
-    					<div class="slide-caption"></div>
-    				</li>
+  				<li class="slide" data-slide-id="7">
+  					<div class="slide-media">
+  						<img src="images/denver.jpg">
+  					</div>
+  					<div class="slide-caption">Slide 7</div>
+  				</li>
 
-    				<li class="slide">
-    					<div class="slide-media">
-    						<img src="images/jaipur.jpg">
-    					</div>
-    					<div class="slide-caption"></div>
-    				</li>
+  				<li class="slide" data-slide-id="8">
+  					<div class="slide-media">
+  						<img src="images/detroit.jpg">
+  					</div>
+  					<div class="slide-caption">Slide 8</div>
+  				</li>
 
-    				<li class="slide">
-    					<div class="slide-media">
-    						<img src="images/losangeles.jpg">
-    					</div>
-    					<div class="slide-caption"></div>
-    				</li>
+  				<li class="slide" data-slide-id="9">
+  					<div class="slide-media">
+  						<img src="images/jaipur.jpg">
+  					</div>
+  					<div class="slide-caption">Slide 9</div>
+  				</li>
 
-    				<li class="slide">
-    					<div class="slide-media">
-    						<img src="images/newyork.jpg">
-    					</div>
-    					<div class="slide-caption"></div>
-    				</li>
+  				<li class="slide" data-slide-id="10">
+  					<div class="slide-media">
+  						<img src="images/losangeles.jpg">
+  					</div>
+  					<div class="slide-caption">Slide 10</div>
+  				</li>
 
-    				<li class="slide">
-    					<div class="slide-media">
-    						<img src="images/oakland.jpg">
-    					</div>
-    					<div class="slide-caption"></div>
-    				</li>
-    			</ul>
-    			<button class="nav-button nav-left"><span>&LeftAngleBracket;</span></button>
-    			<button class="nav-button nav-right"><span>&RightAngleBracket;</span></button>
-	    	</div>
-	    	<!-- <footer class="page-footer">
-	    		<p>Special thanks to <a href="https://pixabay.com/">Pixabay</a> for free usage of their API.</p>
-	    	</footer> -->
+  				<!-- <li class="slide" data-slide-id="11">
+  					<div class="slide-media">
+  						<img src="images/newyork.jpg">
+  					</div>
+  					<div class="slide-caption">Slide 11</div>
+  				</li> -->
+
+  				<!-- <li class="slide" data-slide-id="12">
+  					<div class="slide-media">
+  						<img src="images/oakland.jpg">
+  					</div>
+  					<div class="slide-caption">Slide 12</div>
+  				</li> -->
+
+  			</ul>
+  			<button class="nav-button nav-left"><span>&LeftAngleBracket;</span></button>
+  			<button class="nav-button nav-right"><span>&RightAngleBracket;</span></button>
     	</div>
+    	<div class="pagination">
+    		<a class="pagination-indicator"></a>
+    		<a class="pagination-indicator"></a>
+    		<a class="pagination-indicator"></a>
+    		<a class="pagination-indicator"></a>
+    		<a class="pagination-indicator"></a>
+    		<a class="pagination-indicator"></a>
+    		<a class="pagination-indicator"></a>
+    		<a class="pagination-indicator"></a>
+    		<a class="pagination-indicator"></a>
+    		<a class="pagination-indicator"></a>
+    		<a class="pagination-indicator"></a>
+    		<a class="pagination-indicator"></a>
+    	</div>
+    	<!-- <footer class="page-footer">
+    		<p>Special thanks to <a href="https://pixabay.com/">Pixabay</a> for free usage of their API.</p>
+    	</footer> -->
+  	</div>
 
-    	<script src="main.js"></script>
-    </body>
+  	<script src="main.js"></script>
+  </body>
 </html>

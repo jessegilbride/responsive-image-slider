@@ -3,6 +3,7 @@
 $breakpoint-small: 'max-width: 959px';
 $breakpoint-medium: 'min-width: 960px';
 $breakpoint-large: 'min-width: 1200px';
+$slide-total: 12;
 // $total-num-slides: counter(slide-count);
 // $number-of-slides: 1/12;
 // $slider-width: percentage($total-num-slides);
@@ -11,6 +12,8 @@ $breakpoint-large: 'min-width: 1200px';
 
 .page-container {
 	width: 80%;
+	max-width: 1200px; //no more than size of images used
+  min-width: 400px; //so that scaled images are tall enough
 	margin: 5rem auto auto;
 	// &:after {
 	// 	margin: 1rem;
@@ -23,7 +26,7 @@ $breakpoint-large: 'min-width: 1200px';
 	justify-content: flex-start;
 	position: relative;
 	width: 100%;
-	height: 300px;
+	height: 400px;
 	overflow: hidden;
 	.nav-button {
 		position: absolute;
@@ -36,34 +39,38 @@ $breakpoint-large: 'min-width: 1200px';
 		max-width: 6rem;
 		outline: none;
 		border: none;
-		background: rgba(64,64,64,0.3);
-		color: #FFF;
-		span {
-			top: 45%;
-			font-size: 4rem;
-		}
+		// background: rgba(64,64,64,0.2);
+		background: none;
+		color: #CCFF66;
+		transition: background-color 0.5s ease;
 		&.nav-left {
 			left: 0;
 		}
 		&.nav-right {
 			right: 0;
 		}
+		&:hover {background: rgba(64,64,64,0.4);}
+		span {
+			top: 45%;
+			font-size: 4rem;
+		}
 	}
 }
 
 .slider {
 	display: flex;
-	width: 1200%;
+	width: 1000%; //use $slide-total ?
 	flex-shrink: 0;
   transition: all 0.5s;
 }
 
 .slide {
-	flex-basis: calc(100% * 1/12);
+	// flex-basis: calc(100% * 1/12);
+	flex-basis: 10%;
 	flex-shrink: 0;
 	position: relative;
 	list-style: none;
-	counter-increment: slide-count;
+	// counter-increment: slide-count;
 }
 
 .slide-media {
@@ -74,12 +81,36 @@ $breakpoint-large: 'min-width: 1200px';
 }
 
 .slide-caption {
+  // display: none;
 	position: absolute;
-	bottom: 0;
+	bottom: 0rem;
+  // left: 6rem;
+  left: 0;
+  // right: 6rem;
+  right: 0;
+  padding: 1rem 1rem;
+	background: rgba(0,0,0,0.8);
+	color: #DAD;
+  text-align: center;
+  z-index: 10;
+}
+
+.pagination {
 	width: 100%;
-	background: #000;
-	opacity: 0.6;
-	color: #FFF;
+	text-align: center;
+	a {
+		display: inline-flex;
+	  width: 1rem;
+	  height: 1rem;
+	  background: white;
+	  text-decoration: none;
+	  align-items: center;
+	  justify-content: center;
+		margin: 1%;
+		border: solid 1px #000;
+		border-radius: 50%;
+		&:hover {background-color: #000;}
+	}
 }
 
 // .page-footer {
