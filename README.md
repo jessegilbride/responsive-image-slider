@@ -2,21 +2,25 @@
 An image slider that is responsive and independent of any frameworks or libraries.
 
 ## Design Decisions
-Elastic container width, with min-width and max-width set.
+* Elastic container width, with min-width and max-width set.
 
-Should container height be proportional to width?
+* When the slider reaches the last slide, the right-side navigation targets the first slide with an animation of right-to-left, and the opposite for the first slide, where the left-navigation will target the last slide.
 
-Navigation buttons scale with container width.
+## Development Notes
+At first I wasn't sure if it would be best to have the images slide left to right or do a fade-swap, which can be more visually appealing, but to make swiping more intuitive I decided to give it the traditional left/right sliding transition.
 
-Pagination indicators within a certain smaller width need horizontal scroll arrows/nav (via breakpoints).
+Each slide takes up the width of ```.slider-container``` by having the proportionate ratio of width expressed by the flex-basis property on ```.slide```. Accordingly, the width of ```.slider``` must be the number of slides multiplied by 100% (eg, 900% for 9 slides).
 
-## Development Decisions
-At first I wasn't sure if it would be best to have the images slide left to right or do a fade-swap, which can be more visually appealing. I figured that since swiping is required, it is better to use the traditional left/right slide.
-
-Each slide goes into an array. The current image being viewed has a CSS class for the display property to it is shown. When a navigation button pressed, the next image in that direction is given a negative left or right property (which ever direction it's coming from) and is animated into view by transitioning the left or right value to zero. This is calculated based on the width of the ```.slider-container``` element. The current state of the slider is kept in a variable which is updated every time the slider changes slide. So if the pagination buttons are used, it will get updated accordingly. 
-
-When the slider reaches the last slide, the right-side navigation will target the first slide with an animation of right-to-left, and the opposite for the first slide, where the left-navigation will target the last slide.
+The slider functions by rearranging the order of the slides in the DOM. When the slider is advanced to the right, the current ```.slide``` (first child) is translated out of view and is put at the end of the order after the translation completes, such that the next ```.slide``` becomes the first child of ```.slider```.
 
 ## Areas of Improvement
+* Add/fix swipe capability and pagination (the dots under the slider).
+* Fix overlapping backgrounds for navigation buttons and caption area. One idea is to make the button's arrow background a circle.
+* The number of slides factors into the width of ```.slider```, and the flex-basis of each ```.slide```, which currently is hardcoded into the CSS but could be automated by parsing the DOM and adjusting to however many slides (direct children) are within the slider, thereby requiring less maintenance.
+
+## Known Issues (also: see repo issues area)
+* There's a bug where, after clicking the left nav button, clicking the right nav button causes the slider to move forward by 2 slides instead of 1.
+* Images appear to have whitespace under them because of their dimension proportions. If an image doesn't have enough height, at small slider/container widths the whitespace shows.
 
 ## Things Worth Mentioning
+Pagination and swipe capability are not currently functioning.
